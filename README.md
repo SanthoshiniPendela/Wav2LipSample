@@ -7,46 +7,39 @@ Welcome to the Wav2Lip project! This repository contains the complete setup guid
 Before you begin, ensure you have met the following requirements:
 
 - Python 3.6
-- FFmpeg (Install using `sudo apt-get install ffmpeg` for Linux)
+- Anaconda Navigator
+- Git (Install using `conda install -c anaconda git`)
 
 ## Installation
 
 Follow these steps to set up the Wav2Lip project:
 
-1. **Clone the Repository:**
+1. **Create and Activate a New Environment:**
+```
+conda create --name Wav2LipEnv python=3.6
+conda activate Wav2LipEnv
+```
+
+2. **Install Git:**
+```
+conda install -c anaconda git
+```
+
+3. **Clone Wav2Lip Repository:**
 ```
 git clone https://github.com/Rudrabha/Wav2Lip.git
 cd Wav2Lip
 ```
 
-2. **Environment Setup:**
-- **For MacOS:**
-  ```
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  brew install pyenv
-  mkdir Wav2LipProject && cd Wav2LipProject
-  pyenv install 3.6.15
-  pyenv local 3.6.15
-  python -m venv Wav2LipEnv
-  source Wav2LipEnv/bin/activate
-  python3 --version
-  ```
-
-- **For Windows (using Anaconda):**
-  ```
-  conda create --name Wav2LipEnv python=3.6
-  conda activate Wav2LipEnv
-  ```
-
-3. **Install Dependencies:**
+4. **Update pip and Install Required Libraries:**
 ```
-pip install --upgrade pip
+python -m pip install --upgrade pip
 pip install opencv-contrib-python==4.2.0.34
 pip install -r requirements.txt
 ```
 
-4. **Download Pretrained Models:**
-Download `wav2lip_gan.pth` from the repository and place it into the `checkpoints` folder.
+5. **Download Pretrained Model:**
+- Download `wav2lip_gan.pth` (Wav2Lip + GAN Link) from the repository and place it into the `checkpoints` folder.
 
 ## Usage
 
@@ -54,12 +47,13 @@ To lip-sync a video to any audio, run:
 ```
 python inference.py --checkpoint_path path-to-wav2lip_gan.pth --face path-to-video.mp4 --audio path-to-audio.wav
 ```
-The output will be saved in the `results` folder.
+The final product should appear in the `results` folder.
 
-## Tips for Better Results
+## Tips for Using Wav2Lip on Windows:
 
-- Ensure the Python 3.6 environment is active.
-- Use .mp4 format for video and .wav for audio.
-- Lower quality videos (e.g., 1080p) tend to give better results.
-- Ensure the video is not longer than the audio.
-- For detailed settings, refer to the official [Wav2Lip repository](https://github.com/Rudrabha/Wav2Lip.git).
+- Ensure the `Wav2LipEnv` environment is activated and using Python 3.6 before running scripts.
+- Video must be in .mp4 format and audio in .wav.
+- Better results are obtained using lower quality video; 1080p looks best. 720p executes faster but may produce poorer results.
+- Verify the Wav2Lip directory is correctly set up before proceeding.
+- Make sure the video is not longer than the audio.
+- Run the main script for synchronization in the Wav2Lip directory.
