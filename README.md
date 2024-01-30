@@ -14,9 +14,10 @@ Before you begin, ensure you have met the following requirements:
 Follow these steps to set up the Wav2Lip project:
 
 1. **Clone the Repository:**
+```
 git clone https://github.com/Rudrabha/Wav2Lip.git
 cd Wav2Lip
-
+```
 
 2. **Environment Setup:**
 - **For MacOS:**
@@ -38,10 +39,11 @@ cd Wav2Lip
   ```
 
 3. **Install Dependencies:**
+```
 pip install --upgrade pip
 pip install opencv-contrib-python==4.2.0.34
 pip install -r requirements.txt
-
+```
 
 4. **Download Pretrained Models:**
 Download `wav2lip_gan.pth` from the repository and place it into the `checkpoints` folder.
@@ -49,8 +51,9 @@ Download `wav2lip_gan.pth` from the repository and place it into the `checkpoint
 ## Usage
 
 To lip-sync a video to any audio, run:
+```
 python inference.py --checkpoint_path path-to-wav2lip_gan.pth --face path-to-video.mp4 --audio path-to-audio.wav
-
+```
 The output will be saved in the `results` folder.
 
 ## Tips for Better Results
