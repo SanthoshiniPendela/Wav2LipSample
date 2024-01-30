@@ -37,7 +37,7 @@ python -m pip install --upgrade pip
 pip install opencv-contrib-python==4.2.0.34
 pip install -r requirements.txt
 ```
-- Note: If you encounter the following error during installation:
+Note: If you encounter the following error during installation:
 ERROR: Could not find a version that satisfies the requirement torch==1.1.0 (from versions: 1.7.0, 1.7.1, 1.8.0, 1.8.1, 1.9.0, 1.9.1, 1.10.0, 1.10.1, 1.10.2)
 ERROR: No matching distribution found for torch==1.1.0
 
